@@ -1,0 +1,57 @@
+\usection{Problema 1}
+
+  \usubsection{Enunciado}
+
+  \usubsection{Solución}
+
+  \usubsubsection{Tabla de Verdad}
+  \begin{center}
+    \begin{tabular}{ c | c | c | c | c || c | c | c | c | c | c | c}
+      Valor & W & X & Y & Z & a & b & c & d & e & f & g \\
+      \toprule
+      %   W   X   Y   W   a   b   c   d   e   f   g
+      0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+      1 & 0 & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 \\
+      \midrule
+      2 & 0 & 0 & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+      3 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+      \midrule
+      4 & 0 & 1 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 0 \\
+      5 & 0 & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+      \midrule
+      6 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+      7 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+      \midrule
+      8 & 1 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+      9 & 1 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+      \midrule
+      H & 1 & 0 & 1 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 0 \\
+      O & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+      \midrule
+      L & 1 & 1 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 0 \\
+      A & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+      \midrule
+      X & 1 & 1 & 1 & 0 & X & X & X & X & X & X & X \\
+      X & 1 & 1 & 1 & 1 & X & X & X & X & X & X & X \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+
+
+  \usubsubsection{Mapas de Karnaugh}
+
+  Para el segmento a:
+  \begin{Karnaugh}{W}{X}{Y}{Z}
+      \contingut{
+      1, ,1,1,
+       ,1,1,1,
+      1,1, ,1,
+       ,1,X,X}
+     \implicant{7}{14}{red}
+     \implicant{3}{6}{green}
+     \implicant[3pt]{5}{15}{orange}
+     \implicant{13}{11}{black}
+     \implicantdaltbaix[3pt]{0}{8}{blue}
+     %\implicantcantons[2pt]{orange}
+     %\implicantcostats{4}{14}{green}
+  \end{Karnaugh}

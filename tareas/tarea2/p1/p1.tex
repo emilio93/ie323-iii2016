@@ -3,43 +3,109 @@
   \usubsection{Enunciado}
 
   \usubsection{Solución}
+    \begin{figure}[H]
+      \centering
+        \begin{tikzpicture}
+          \SSGLeg[3em]{}
+        \end{tikzpicture}
+    \end{figure}
+
+    \begin{figure}[H]
+      \centering
+        \begin{tikzpicture}
+          \coordinate(A1)at(0,0);
+          \coordinate(A2)at(2,0);
+          \coordinate(A3)at(4,0);
+          \coordinate(A4)at(6,0);
+          \coordinate(A5)at(8,0);
+          \SSGNb[2em]{A1}{0}
+          \SSGNb[2em]{A2}{1}
+          \SSGNb[2em]{A3}{2}
+          \SSGNb[2em]{A4}{3}
+          \SSGNb[2em]{A5}{4}
+        \end{tikzpicture}
+    \end{figure}
+
+    \begin{figure}[H]
+      \centering
+        \begin{tikzpicture}
+          \coordinate(A1)at(0,0);
+          \coordinate(A2)at(2,0);
+          \coordinate(A3)at(4,0);
+          \coordinate(A4)at(6,0);
+          \coordinate(A5)at(8,0);
+          \SSGNb[2em]{A1}{5}
+          \SSGNb[2em]{A2}{6}
+          \SSGNb[2em]{A3}{7}
+          \SSGNb[2em]{A4}{8}
+          \SSGNb[2em]{A5}{9}
+        \end{tikzpicture}
+    \end{figure}
+
+    \begin{figure}[H]
+      \centering
+        \begin{tikzpicture}
+          \coordinate(A1)at(0,0);
+          \coordinate(A2)at(2,0);
+          \coordinate(A3)at(4,0);
+          \coordinate(A4)at(6,0);
+          \SSGNb[2em]{A1}{H}
+          \SSGNb[2em]{A2}{O}
+          \SSGNb[2em]{A3}{L}
+          \SSGNb[2em]{A4}{A}
+        \end{tikzpicture}
+    \end{figure}
 
   \usubsubsection{Tabla de Verdad}
-  \begin{center}
-    \begin{tabular}{ c | c | c | c | c || c | c | c | c | c | c | c}
-      Valor & W & X & Y & Z & a & b & c & d & e & f & g \\
-      \toprule
-      %   W   X   Y   W   a   b   c   d   e   f   g
-      0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
-      1 & 0 & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 \\
-      \midrule
-      2 & 0 & 0 & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
-      3 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
-      \midrule
-      4 & 0 & 1 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 0 \\
-      5 & 0 & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
-      \midrule
-      6 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
-      7 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
-      \midrule
-      8 & 1 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
-      9 & 1 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
-      \midrule
-      H & 1 & 0 & 1 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 0 \\
-      O & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
-      \midrule
-      L & 1 & 1 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 0 \\
-      A & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
-      \midrule
-      X & 1 & 1 & 1 & 0 & X & X & X & X & X & X & X \\
-      X & 1 & 1 & 1 & 1 & X & X & X & X & X & X & X \\
-      \bottomrule
-    \end{tabular}
-  \end{center}
+  \begin{table}[H]
+    \begin{center}
+      \begin{tabular}{ c ||| c  c  c  c ||| c | c | c | c | c | c | c}
+        \toprule
+        Valor & W & X & Y & Z & a & b & c & d & e & f & g \\
+        \toprule
+        %         W   X   Y   W         a   b   c   d   e   f   g
+        0    &    0 & 0 & 0 & 0    &    1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+        1    &    0 & 0 & 0 & 1    &    0 & 1 & 1 & 0 & 0 & 0 & 0 \\
+        % \midrule
+        %         W   X   Y   W         a   b   c   d   e   f   g
+        2    &    0 & 0 & 1 & 0    &    1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+        3    &    0 & 0 & 1 & 1    &    1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+        \midrule
+        %         W   X   Y   W         a   b   c   d   e   f   g
+        4    &    0 & 1 & 0 & 0    &    0 & 1 & 1 & 1 & 1 & 1 & 0 \\
+        5    &    0 & 1 & 0 & 1    &    1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+        % \midrule
+        %         W   X   Y   W         a   b   c   d   e   f   g
+        6    &    0 & 1 & 1 & 0    &    1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+        7    &    0 & 1 & 1 & 1    &    1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+        \midrule
+        %         W   X   Y   W         a   b   c   d   e   f   g
+        8    &    1 & 0 & 0 & 0    &    1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+        9    &    1 & 0 & 0 & 1    &    1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+        % \midrule
+        %         W   X   Y   W         a   b   c   d   e   f   g
+        H    &    1 & 0 & 1 & 0    &    0 & 1 & 1 & 1 & 1 & 1 & 0 \\
+        O    &    1 & 0 & 1 & 1    &    1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+        \midrule
+        %         W   X   Y   W         a   b   c   d   e   f   g
+        L    &    1 & 1 & 0 & 0    &    0 & 1 & 1 & 1 & 1 & 1 & 0 \\
+        A    &    1 & 1 & 0 & 1    &    1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+        % \midrule
+        %         W   X   Y   W         a   b   c   d   e   f   g
+        X    &    1 & 1 & 1 & 0    &    X & X & X & X & X & X & X \\
+        X    &    1 & 1 & 1 & 1    &    X & X & X & X & X & X & X \\
+        \bottomrule
+      \end{tabular}
+      \label{tab:verdad}
+      \caption{Tabla de Verdad}
+    \end{center}
+  \end{table}
 
 
   \usubsubsection{Mapas de Karnaugh}
 
+  Los mapas de Karnaugh se muestran según el siguiente ejemplo que muestra el
+  número correspondiente de cada celda.
   \begin{center}
     \begin{Karnaugh}{W}{X}{Y}{Z}
       \contingut{
@@ -57,16 +123,13 @@
       \begin{Karnaugh}{W}{X}{Y}{Z}
         \contingut{
         1,  , 1, 1,
-        1, 1, 1,  ,
+         , 1, 1, 1,
         1, 1,  , 1,
          , 1, X, X}
-        \implicant{7}{14}{red}
+         \implicantdaltbaix{0}{8}{black}
         \implicant{3}{6}{green}
-        \implicant[3pt]{5}{15}{orange}
-        \implicant{13}{11}{black}
-        \implicantdaltbaix[3pt]{0}{8}{blue}
-        %\implicantcantons[2pt]{orange}
-        %\implicantcostats{4}{14}{green}
+        \implicant[4pt]{5}{15}{blue}
+        \implicant{13}{11}{red}
       \end{Karnaugh}
     \end{center}
   \end{figure}
@@ -77,17 +140,14 @@
       \begin{Karnaugh}{W}{X}{Y}{Z}
         \contingut{
         1, 1, 1, 1,
+        1,  ,  , 1,
         1, 1, 1, 1,
-        1, 1, 1, 1,
-        1 ,1 ,X ,X
+         , 1,X ,X
         }
-        \implicant{7}{14}{red}
-        \implicant{3}{6}{green}
-        \implicant[3pt]{5}{15}{orange}
-        \implicant{13}{11}{black}
-        \implicantdaltbaix[3pt]{0}{8}{blue}
-        %\implicantcantons[2pt]{orange}
-        %\implicantcostats{4}{14}{green}
+        \implicantdaltbaix[4pt]{0}{10}{black}
+        \implicant{0}{4}{green}
+        \implicant{3}{11}{blue}
+        \implicant[4pt]{13}{11}{red}
       \end{Karnaugh}
     \end{center}
   \end{figure}
@@ -97,18 +157,15 @@
     \begin{center}
       \begin{Karnaugh}{W}{X}{Y}{Z}
         \contingut{
-        0, 1, 2, 3,
-        4, 5, 6, 7,
-        8, 9, 10,11,
-        12,13,14,15
+        1, 1,  , 1,
+        1, 1, 1, 1,
+        1, 1, 1, 1,
+          ,1 ,X ,X
         }
-        \implicant{7}{14}{red}
-        \implicant{3}{6}{green}
-        \implicant[3pt]{5}{15}{orange}
-        \implicant{13}{11}{black}
-        \implicantdaltbaix[3pt]{0}{8}{blue}
-        %\implicantcantons[2pt]{orange}
-        %\implicantcostats{4}{14}{green}
+        \implicant{0}{5}{black}
+        \implicant[4pt]{1}{11}{green}
+        \implicant[4pt]{7}{14}{blue}
+        \implicant{8}{10}{red}
       \end{Karnaugh}
     \end{center}
   \end{figure}
@@ -118,18 +175,15 @@
     \begin{center}
       \begin{Karnaugh}{W}{X}{Y}{Z}
         \contingut{
-        0, 1, 2, 3,
-        4, 5, 6, 7,
-        8, 9, 10,11,
-        12,13,14,15
+        1,  , 1, 1,
+         , 1, 1,  ,
+        1, 1,  , 1,
+        1,  , X, X
         }
-        \implicant{7}{14}{red}
-        \implicant{3}{6}{green}
-        \implicant[3pt]{5}{15}{orange}
-        \implicant{13}{11}{black}
-        \implicantdaltbaix[3pt]{0}{8}{blue}
-        %\implicantcantons[2pt]{orange}
-        %\implicantcostats{4}{14}{green}
+        \implicantdaltbaix[4pt]{0}{8}{black}
+        \implicantdaltbaix[4pt]{3}{11}{green}
+        \implicantcostats{0}{2}{blue}
+        \implicant[4pt]{2}{6}{red}
       \end{Karnaugh}
     \end{center}
   \end{figure}
@@ -139,16 +193,16 @@
     \begin{center}
       \begin{Karnaugh}{W}{X}{Y}{Z}
         \contingut{
-        0, 1, 2, 3,
-        4, 5, 6, 7,
-        8, 9, 10,11,
-        12,13,14,15
+        1,  , 1,  ,
+         ,  , 1,  ,
+        1,  , 1, 1,
+        1 ,1 ,X ,X
         }
-        \implicant{7}{14}{red}
-        \implicant{3}{6}{green}
-        \implicant[3pt]{5}{15}{orange}
-        \implicant{13}{11}{black}
-        \implicantdaltbaix[3pt]{0}{8}{blue}
+        % \implicant{7}{14}{red}
+        % \implicant{3}{6}{green}
+        % \implicant[3pt]{5}{15}{orange}
+        % \implicant{13}{11}{black}
+        % \implicantdaltbaix[3pt]{0}{8}{blue}
         %\implicantcantons[2pt]{orange}
         %\implicantcostats{4}{14}{green}
       \end{Karnaugh}
@@ -160,16 +214,16 @@
     \begin{center}
       \begin{Karnaugh}{W}{X}{Y}{Z}
         \contingut{
-        0, 1, 2, 3,
-        4, 5, 6, 7,
-        8, 9, 10,11,
-        12,13,14,15
+        1,  ,  ,  ,
+        1, 1, 1,  ,
+        1, 1, 1, 1,
+        1 ,1 ,X ,X
         }
-        \implicant{7}{14}{red}
-        \implicant{3}{6}{green}
-        \implicant[3pt]{5}{15}{orange}
-        \implicant{13}{11}{black}
-        \implicantdaltbaix[3pt]{0}{8}{blue}
+        % \implicant{7}{14}{red}
+        % \implicant{3}{6}{green}
+        % \implicant[3pt]{5}{15}{orange}
+        % \implicant{13}{11}{black}
+        % \implicantdaltbaix[3pt]{0}{8}{blue}
         %\implicantcantons[2pt]{orange}
         %\implicantcostats{4}{14}{green}
       \end{Karnaugh}
@@ -181,16 +235,16 @@
     \begin{center}
       \begin{Karnaugh}{W}{X}{Y}{Z}
         \contingut{
-        0, 1, 2, 3,
-        4, 5, 6, 7,
-        8, 9, 10,11,
-        12,13,14,15
+         ,  , 1, 1,
+        1, 1, 1,  ,
+        1, 1, 1,  ,
+          ,1 ,X ,X
         }
-        \implicant{7}{14}{red}
-        \implicant{3}{6}{green}
-        \implicant[3pt]{5}{15}{orange}
-        \implicant{13}{11}{black}
-        \implicantdaltbaix[3pt]{0}{8}{blue}
+        % \implicant{7}{14}{red}
+        % \implicant{3}{6}{green}
+        % \implicant[3pt]{5}{15}{orange}
+        % \implicant{13}{11}{black}
+        % \implicantdaltbaix[3pt]{0}{8}{blue}
         %\implicantcantons[2pt]{orange}
         %\implicantcostats{4}{14}{green}
       \end{Karnaugh}

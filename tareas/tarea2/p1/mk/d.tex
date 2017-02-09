@@ -1,0 +1,49 @@
+Para el segmento d:
+\begin{figure}[H]
+  \centering
+    \begin{Karnaugh}{X}{Y}{Z}{W}
+      \contingut{
+        1,
+        ,
+        1,
+        1,
+        ,
+        1,
+        1,
+        ,
+        1,
+        1,
+        ,
+        1,
+        1,
+        ,
+        X,
+        X
+      }
+      \implicantdaltbaix[4pt]{0}{8}{black}
+      \implicant[2pt]{3}{2}{black}
+      \implicantdaltbaix[4pt]{3}{11}{green}
+      \implicantcostats{0}{2}{blue}
+      \implicant[4pt]{2}{6}{red}
+      \implicant{5}{5}{orange}
+      \implicant{8}{9}{yellow}
+      \implicant[2pt]{9}{11}{red}
+      \implicantcostats{12}{14}{pink}
+    \end{Karnaugh}
+\end{figure}
+
+\begin{align*}
+  \bar{X} \cdot \bar{W} & (*) &
+  \color{green} W & (*) &
+  \color{blue} Y \cdot Z & &
+  \color{red} X \cdot \bar{Y} & (*) \\
+  \color{orange} \bar{X}\cdot Y
+  \color{black}
+\end{align*}
+
+\begin{equation*}
+  \bar{X} \cdot \bar{W} +
+  W +
+  X \cdot \bar{Y} +
+  \bar{X}\cdot Y
+\end{equation*}

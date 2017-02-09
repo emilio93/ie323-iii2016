@@ -1,0 +1,43 @@
+Para el segmento b:
+\begin{figure}[H]
+  \centering
+    \begin{Karnaugh}{X}{Y}{Z}{W}
+      \contingut{
+        1,
+        1,
+        1,
+        1,
+        1,
+        ,
+        ,
+        1,
+        1,
+        1,
+        1,
+        1,
+        ,
+        1,
+        X,
+        X
+      }
+      \implicantdaltbaix[4pt]{0}{10}{black}
+      \implicant{0}{4}{green}
+      \implicant{3}{11}{blue}
+      \implicant[4pt]{13}{11}{red}
+    \end{Karnaugh}
+\end{figure}
+
+\begin{align*}
+  \bar{Y} & (*) &
+  \color{green} \bar{X} \cdot \bar{Z} \cdot \bar{W}& (*) &
+  \color{blue} Z \cdot W & (*) &
+  \color{red} X \cdot W & (*)
+  \color{black}
+\end{align*}
+
+\begin{equation*}
+  \bar{Y} +
+  \bar{X} \cdot \bar{Z} \cdot \bar{W}+
+  Z \cdot W +
+  X \cdot W
+\end{equation*}

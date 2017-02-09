@@ -60,263 +60,68 @@
     Se utiliza la configuración mostrada en la primer imagen de la Figura \ref{imseg}
 
   \usubsubsection{Tabla de Verdad}
-  \begin{table}[H]
-    \begin{center}
-      \begin{tabular}{ c ||| c  c  c  c ||| c | c | c | c | c | c | c}
-        \toprule
-        Valor & X & Y & Z & W & a & b & c & d & e & f & g \\
-        \toprule
-        %         X & Y & Z & W         a   b   c   d   e   f   g
-        0    &    0 & 0 & 0 & 0    &    1 & 1 & 1 & 1 & 1 & 1 & 0 \\
-        1    &    0 & 0 & 0 & 1    &    0 & 1 & 1 & 0 & 0 & 0 & 0 \\
-        % \midrule
-        %         X & Y & Z & W         a   b   c   d   e   f   g
-        2    &    0 & 0 & 1 & 0    &    1 & 1 & 0 & 1 & 1 & 0 & 1 \\
-        3    &    0 & 0 & 1 & 1    &    1 & 1 & 1 & 1 & 0 & 0 & 1 \\
-        \midrule
-        %         X & Y & Z & W         a   b   c   d   e   f   g
-        4    &    0 & 1 & 0 & 0    &    0 & 1 & 1 & 0 & 0 & 1 & 1 \\
-        5    &    0 & 1 & 0 & 1    &    1 & 0 & 1 & 1 & 0 & 1 & 1 \\
-        % \midrule
-        %         X & Y & Z & W         a   b   c   d   e   f   g
-        6    &    0 & 1 & 1 & 0    &    1 & 0 & 1 & 1 & 1 & 1 & 1 \\
-        7    &    0 & 1 & 1 & 1    &    1 & 1 & 1 & 0 & 0 & 0 & 0 \\
-        \midrule
-        %         X & Y & Z & W         a   b   c   d   e   f   g
-        8    &    1 & 0 & 0 & 0    &    1 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        9    &    1 & 0 & 0 & 1    &    1 & 1 & 1 & 1 & 0 & 1 & 1 \\
-        % \midrule
-        %         X & Y & Z & W         a   b   c   d   e   f   g
-        H    &    1 & 0 & 1 & 0    &    0 & 1 & 1 & 0 & 1 & 1 & 1 \\
-        O    &    1 & 0 & 1 & 1    &    1 & 1 & 1 & 1 & 1 & 1 & 0 \\
-        \midrule
-        %         X & Y & Z & W         a   b   c   d   e   f   g
-        L    &    1 & 1 & 0 & 0    &    0 & 0 & 0 & 1 & 1 & 1 & 0 \\
-        A    &    1 & 1 & 0 & 1    &    1 & 1 & 1 & 0 & 1 & 1 & 1 \\
-        % \midrule
-        %         X & Y & Z & W         a   b   c   d   e   f   g
-        X    &    1 & 1 & 1 & 0    &    X & X & X & X & X & X & X \\
-        X    &    1 & 1 & 1 & 1    &    X & X & X & X & X & X & X \\
-        \bottomrule
-      \end{tabular}
-      \label{tab:verdad}
-      \caption{Tabla de Verdad}
-    \end{center}
-  \end{table}
-
+    \begin{table}[H]
+      \begin{center}
+        \begin{tabular}{ c ||| c  c  c  c ||| c | c | c | c | c | c | c}
+          \toprule
+          Valor & X & Y & Z & W & a & b & c & d & e & f & g \\
+          \toprule
+          %         X & Y & Z & W         a   b   c   d   e   f   g
+          0    &    0 & 0 & 0 & 0    &    1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+          1    &    0 & 0 & 0 & 1    &    0 & 1 & 1 & 0 & 0 & 0 & 0 \\
+          % \midrule
+          %         X & Y & Z & W         a   b   c   d   e   f   g
+          2    &    0 & 0 & 1 & 0    &    1 & 1 & 0 & 1 & 1 & 0 & 1 \\
+          3    &    0 & 0 & 1 & 1    &    1 & 1 & 1 & 1 & 0 & 0 & 1 \\
+          \midrule
+          %         X & Y & Z & W         a   b   c   d   e   f   g
+          4    &    0 & 1 & 0 & 0    &    0 & 1 & 1 & 0 & 0 & 1 & 1 \\
+          5    &    0 & 1 & 0 & 1    &    1 & 0 & 1 & 1 & 0 & 1 & 1 \\
+          % \midrule
+          %         X & Y & Z & W         a   b   c   d   e   f   g
+          6    &    0 & 1 & 1 & 0    &    1 & 0 & 1 & 1 & 1 & 1 & 1 \\
+          7    &    0 & 1 & 1 & 1    &    1 & 1 & 1 & 0 & 0 & 0 & 0 \\
+          \midrule
+          %         X & Y & Z & W         a   b   c   d   e   f   g
+          8    &    1 & 0 & 0 & 0    &    1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+          9    &    1 & 0 & 0 & 1    &    1 & 1 & 1 & 1 & 0 & 1 & 1 \\
+          % \midrule
+          %         X & Y & Z & W         a   b   c   d   e   f   g
+          H    &    1 & 0 & 1 & 0    &    0 & 1 & 1 & 0 & 1 & 1 & 1 \\
+          O    &    1 & 0 & 1 & 1    &    1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+          \midrule
+          %         X & Y & Z & W         a   b   c   d   e   f   g
+          L    &    1 & 1 & 0 & 0    &    0 & 0 & 0 & 1 & 1 & 1 & 0 \\
+          A    &    1 & 1 & 0 & 1    &    1 & 1 & 1 & 0 & 1 & 1 & 1 \\
+          % \midrule
+          %         X & Y & Z & W         a   b   c   d   e   f   g
+          X    &    1 & 1 & 1 & 0    &    X & X & X & X & X & X & X \\
+          X    &    1 & 1 & 1 & 1    &    X & X & X & X & X & X & X \\
+          \bottomrule
+        \end{tabular}
+        \label{tab:verdad}
+        \caption{Tabla de Verdad}
+      \end{center}
+    \end{table}
 
   \usubsubsection{Mapas de Karnaugh}
-
-  Los mapas de Karnaugh se muestran según el siguiente ejemplo que muestra el
-  número correspondiente de cada celda.
-  \begin{center}
-    \begin{Karnaugh}{X}{Y}{Z}{W}
-      \contingut{
-      0, 1, 2, 3,
-      4, 5, 6, 7,
-      8, 9, 10,11,
-      12,13,14,15
-      }
-    \end{Karnaugh}
-  \end{center}
-
-  Para el segmento a:
-  \begin{figure}[H]
+    Los mapas de Karnaugh se muestran según el siguiente ejemplo que muestra el
+    número correspondiente de cada celda.
     \begin{center}
       \begin{Karnaugh}{X}{Y}{Z}{W}
         \contingut{
-          1,
-          ,
-          1,
-          1,
-          ,
-          1,
-          1,
-          1,
-          1,
-          1,
-          ,
-          1,
-          ,
-          1,
-          X,
-          X
+        0, 1, 2, 3,
+        4, 5, 6, 7,
+        8, 9, 10,11,
+        12,13,14,15
         }
-        \implicantdaltbaix{0}{8}{black}
-        \implicantcostats[2pt]{0}{2}{orange}
-        \implicant{3}{6}{green}
-        \implicant[2pt]{8}{9}{yellow}
-        \implicant[5pt]{3}{11}{pink}
-        \implicant[2pt]{5}{15}{blue}
-        \implicant{13}{11}{red}
       \end{Karnaugh}
     \end{center}
-  \end{figure}
 
-  Para el segmento b:
-  \begin{figure}[H]
-    \begin{center}
-      \begin{Karnaugh}{X}{Y}{Z}{W}
-        \contingut{
-          1,
-          1,
-          1,
-          1,
-          1,
-          ,
-          ,
-          1,
-          1,
-          1,
-          1,
-          1,
-          ,
-          1,
-          X,
-          X
-        }
-        \implicantdaltbaix[4pt]{0}{10}{black}
-        \implicant{0}{4}{green}
-        \implicant{3}{11}{blue}
-        \implicant[4pt]{13}{11}{red}
-      \end{Karnaugh}
-    \end{center}
-  \end{figure}
-
-  Para el segmento c:
-  \begin{figure}[H]
-    \begin{center}
-      \begin{Karnaugh}{X}{Y}{Z}{W}
-        \contingut{
-          1,
-          1,
-          ,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          ,
-          1,
-          X,
-          X
-        }
-        \implicant{0}{5}{black}
-        \implicant[4pt]{1}{11}{green}
-        \implicant[4pt]{7}{14}{blue}
-        \implicant{8}{10}{red}
-      \end{Karnaugh}
-    \end{center}
-  \end{figure}
-
-  Para el segmento d:
-  \begin{figure}[H]
-    \begin{center}
-      \begin{Karnaugh}{X}{Y}{Z}{W}
-        \contingut{
-          1,
-          ,
-          1,
-          1,
-          ,
-          1,
-          1,
-          ,
-          1,
-          1,
-          ,
-          1,
-          1,
-          ,
-          X,
-          X
-        }
-        \implicantdaltbaix[4pt]{0}{8}{black}
-        \implicantdaltbaix[4pt]{3}{11}{green}
-        \implicantcostats{0}{2}{blue}
-        \implicant[4pt]{2}{6}{red}
-      \end{Karnaugh}
-    \end{center}
-  \end{figure}
-
-  Para el segmento e:
-  \begin{figure}[H]
-    \begin{center}
-      \begin{Karnaugh}{X}{Y}{Z}{W}
-        \contingut{
-          1,
-          ,
-          1,
-          ,
-          ,
-          ,
-          1,
-          ,
-          1,
-          ,
-          1,
-          1,
-          1,
-          1,
-          X,
-          X
-        }
-      \end{Karnaugh}
-    \end{center}
-  \end{figure}
-
-  Para el segmento f:
-  \begin{figure}[H]
-    \begin{center}
-      \begin{Karnaugh}{X}{Y}{Z}{W}
-        \contingut{
-        1,
-        ,
-        ,
-        ,
-        1,
-        1,
-        1,
-        ,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        X,
-        X
-        }
-      \end{Karnaugh}
-    \end{center}
-  \end{figure}
-
-  Para el segmento g:
-  \begin{figure}[H]
-    \begin{center}
-      \begin{Karnaugh}{X}{Y}{Z}{W}
-        \contingut{
-          ,
-          ,
-          1,
-          1,
-          1,
-          1,
-          1,
-          ,
-          1,
-          1,
-          1,
-          ,
-          ,
-          1,
-          X,
-          X
-        }
-      \end{Karnaugh}
-    \end{center}
-  \end{figure}
+    \input{p1/mk/a.tex}
+    \input{p1/mk/b.tex}
+    \input{p1/mk/c.tex}
+    \input{p1/mk/d.tex}
+    \input{p1/mk/e.tex}
+    \input{p1/mk/f.tex}
+    \input{p1/mk/g.tex}

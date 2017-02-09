@@ -1,0 +1,52 @@
+Para el segmento a:
+%\begin{equation*}
+%  F = \sum \text{m}(0, 2, 3, 5, 6, 7, 8, 9, 11, 13) + \text{d}(14, 15)
+%\end{equation*}
+\begin{figure}[H]
+  \centering
+    \begin{Karnaugh}{X}{Y}{Z}{W}
+      \contingut{
+        1,
+        ,
+        1,
+        1,
+        ,
+        1,
+        1,
+        1,
+        1,
+        1,
+        ,
+        1,
+        ,
+        1,
+        X,
+        X
+      }
+      \implicantdaltbaix{0}{8}{black}
+      \implicantcostats[2pt]{0}{2}{orange}
+      \implicant{3}{6}{green}
+      \implicant[5pt]{3}{11}{pink}
+      \implicant[2pt]{5}{15}{blue}
+      \implicant[2pt]{8}{9}{yellow}
+      \implicant{13}{11}{red}
+    \end{Karnaugh}
+\end{figure}
+
+\begin{align*}
+  \bar{Y} \cdot \bar{Z} \cdot \bar{W} & &
+  \color{orange} \bar{X} \cdot \bar{Y} \cdot \bar{W}& &
+  \color{green} \bar{X} \cdot Z & (*) &
+  \color{pink} Z \cdot W \\
+  \color{blue} Y \cdot W & (*) &
+  \color{yellow} X \cdot \bar{Y} \cdot Z & &
+  \color{red} X \cdot W &
+  \color{black}
+\end{align*}
+
+\begin{equation*}
+  \bar{Y} \cdot \bar{Z} \cdot \bar{W} +
+  \bar{X} \cdot Z +
+  Y \cdot W +
+  X \cdot W
+\end{equation*}

@@ -1,0 +1,45 @@
+Para el segmento c:
+\begin{figure}[H]
+  \centering
+    \begin{Karnaugh}{X}{Y}{Z}{W}
+      \contingut{
+        1,
+        1,
+        ,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        ,
+        1,
+        X,
+        X
+      }
+      \implicant{0}{5}{black}
+      \implicant[4pt]{1}{11}{green}
+      \implicant[2pt]{7}{14}{blue}
+      \implicant{8}{10}{red}
+      \implicant[4pt]{4}{6}{orange}
+    \end{Karnaugh}
+\end{figure}
+
+\begin{align*}
+  \bar{X} \cdot \bar{W} & (*) &
+  \color{green} W & (*) &
+  \color{blue} Y \cdot Z & &
+  \color{red} X \cdot \bar{Y} & (*) \\
+  \color{orange} \bar{X}\cdot Y
+  \color{black}
+\end{align*}
+
+\begin{equation*}
+  \bar{X} \cdot \bar{W} +
+  W +
+  X \cdot \bar{Y} +
+  \bar{X}\cdot Y
+\end{equation*}

@@ -20,6 +20,35 @@ Para el segmento g:
         X,
         X
       }
+      \implicant{3}{2}{black}
+      \implicant{4}{5}{blue}
+      \implicantcostats[2pt]{4}{6}{green}
+      \implicantcostats[2pt]{8}{10}{pink}
+      \implicant{2}{10}{red}
+      \implicant[2pt]{5}{13}{orange}
+      \implicant{13}{9}{yellow}
+      \implicant[4pt]{13}{15}{cyan}
+      \implicant[2pt]{8}{9}{magenta}
     \end{Karnaugh}
   \end{center}
 \end{figure}
+
+\begin{align*}
+  \bar{X} \cdot \bar{Y} \cdot Z & (*) &
+  \color{green} \bar{X} \cdot Y \cdot \bar{W} &  &
+  \color{blue} \bar{X} \cdot Y \cdot \bar{Z} &  &
+  \color{red} Z \cdot \bar{W} & \\
+  \color{orange} \bar{Y} \cdot \bar{Z} \cdot W &  &
+  \color{cyan} X \cdot Y \cdot W &  &
+  \color{magenta} X \cdot \bar{Y} \cdot \bar{Z} &  &
+  \color{yellow} X \cdot \bar{Z} \cdot W & \\
+  \color{pink} X \cdot \bar{Y} \cdot \bar{W}
+\end{align*}
+
+\begin{equation*}
+  \bar{X} \cdot \bar{Y} \cdot Z +
+  Z \cdot \bar{W} +
+  \bar{X} \cdot Y \cdot \bar{Z} +
+  X \cdot \bar{Y} \cdot \bar{Z} +
+  X \cdot \bar{Z} \cdot W
+\end{equation*}

@@ -21,29 +21,35 @@ Para el segmento d:
         X
       }
       \implicantdaltbaix[4pt]{0}{8}{black}
-      \implicant[2pt]{3}{2}{black}
+      \implicant[2pt]{3}{2}{yellow}
       \implicantdaltbaix[4pt]{3}{11}{green}
       \implicantcostats{0}{2}{blue}
       \implicant[4pt]{2}{6}{red}
       \implicant{5}{5}{orange}
-      \implicant{8}{9}{yellow}
-      \implicant[2pt]{9}{11}{red}
-      \implicantcostats{12}{14}{pink}
+      \implicant{8}{9}{cyan}
+      \implicant[2pt]{9}{11}{magenta}
+      \implicantcostats{12}{14}{purple}
+      \implicant[2pt]{12}{8}{pink}
     \end{Karnaugh}
 \end{figure}
 
 \begin{align*}
-  \bar{X} \cdot \bar{W} & (*) &
-  \color{green} W & (*) &
-  \color{blue} Y \cdot Z & &
-  \color{red} X \cdot \bar{Y} & (*) \\
-  \color{orange} \bar{X}\cdot Y
-  \color{black}
+  \bar{Y} \cdot \bar{Z} \cdot \bar{W} & &
+  \color{green} \bar{Y} \cdot Z \cdot W & &
+  \color{blue} \bar{X} \cdot \bar{Y} \cdot \bar{W} & &
+  \color{red} \bar{X} \cdot Z \cdot \bar{W} & (*) \\
+  \color{orange} \bar{X} \cdot Y \cdot \bar{Z} \cdot W & (*) &
+  \color{cyan} X \cdot \bar{Y} \cdot \bar{Z} & &
+  \color{magenta} X \cdot \bar{Y} \cdot W & &
+  \color{purple} X \cdot Y \cdot \bar{W} \\
+  \color{pink} X \cdot \bar{Z} \cdot \bar{W} & &
 \end{align*}
 
 \begin{equation*}
-  \bar{X} \cdot \bar{W} +
-  W +
-  X \cdot \bar{Y} +
-  \bar{X}\cdot Y
+  \bar{Y} \cdot \bar{Z} \cdot \bar{W} +
+  \bar{Y} \cdot Z \cdot W +
+  \bar{X} \cdot Z \cdot \bar{W} +
+  X \cdot \bar{Z} \cdot \bar{W} +
+  X \cdot \bar{Y} \cdot W +
+  \bar{X} \cdot Y \cdot \bar{Z} \cdot W
 \end{equation*}

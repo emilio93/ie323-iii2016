@@ -23,7 +23,21 @@ Para el segmento f:
       \implicant{0}{8}{black}
       \implicant[2pt]{12}{10}{blue}
       \implicant[4pt]{4}{13}{green}
-      \implicant{6}{14}{orange}
+      \implicantcostats[2pt]{4}{6}{red}
     \end{Karnaugh}
   \end{center}
 \end{figure}
+
+\begin{align*}
+  \bar{Z} \cdot \bar{W} & (*) &
+  \color{green} Y \cdot \bar{Z} & (*) &
+  \color{blue} X & (*) &
+  \color{red} \bar{X} \cdot Y \cdot \bar{W} & (*)
+\end{align*}
+
+\begin{equation*}
+  \bar{Z} \cdot \bar{W} +
+  Y \cdot \bar{Z} +
+  X +
+  \bar{X} \cdot Y \cdot \bar{W}
+\end{equation*}

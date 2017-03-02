@@ -1,0 +1,84 @@
+\begin{table}[H]
+  \centering
+  \begin{adjustbox}{max width=\textwidth}
+    \begin{tabular}{ c | c | c | c | c | c | c ||| c | c | c | c | c | c || c | c | c | c | c | c }
+       & \multicolumn{6}{c}{\textbf{Número Presente}} &
+       \multicolumn{6}{c}{\textbf{Número Previo} \small{$Q_5=0$}} &
+       \multicolumn{6}{c}{\textbf{Número Previo} \small{$Q_5=1$}} \\
+      \toprule
+      Decimal  &
+      $Q_5$ & $Q_4$ & $Q_3$ & $Q_2$ & $Q_1$ & $Q_0$ &
+      $Q_5\prime$ & $Q_4\prime$ & $Q_3\prime$ & $Q_2\prime$ & $Q_1\prime$ & $Q_0\prime$ &
+      $Q_5\prime$ & $Q_4\prime$ & $Q_3\prime$ & $Q_2\prime$ & $Q_1\prime$ & $Q_0\prime$ \\
+      \toprule
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      0 /32 & 0/1 & 0 & 0 & 0 & 0 & 0 &   1 & 1 & 1 & 1 & 1 & 1 &   0 & 1 & 1 & 1 & 1 & 1 \\
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      1 /33 & 0/1 & 0 & 0 & 0 & 0 & 1 &   0 & 0 & 0 & 0 & 0 & 0 &   1 & 0 & 0 & 0 & 0 & 0 \\
+      %       Q5    04  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      2 /34 & 0/1 & 0 & 0 & 0 & 1 & 0 &   0 & 0 & 0 & 0 & 0 & 1 &   1 & 0 & 0 & 0 & 0 & 1 \\
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      3 /35 & 0/1 & 0 & 0 & 0 & 1 & 1 &   0 & 0 & 0 & 0 & 1 & 0 &   1 & 0 & 0 & 0 & 1 & 0 \\ \hline
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      4 /36 & 0/1 & 0 & 0 & 1 & 0 & 0 &   0 & 0 & 0 & 0 & 1 & 1 &   1 & 0 & 0 & 0 & 1 & 1 \\
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      5 /37 & 0/1 & 0 & 0 & 1 & 0 & 1 &   0 & 0 & 0 & 1 & 0 & 0 &   1 & 0 & 0 & 1 & 0 & 0 \\
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      6 /38 & 0/1 & 0 & 0 & 1 & 1 & 0 &   0 & 0 & 0 & 1 & 0 & 1 &   1 & 0 & 0 & 1 & 0 & 1 \\
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      7 /39 & 0/1 & 0 & 0 & 1 & 1 & 1 &   0 & 0 & 0 & 1 & 1 & 0 &   1 & 0 & 0 & 1 & 1 & 0 \\ \hline
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      8 /40 & 0/1 & 0 & 1 & 0 & 0 & 0 &   0 & 0 & 0 & 1 & 1 & 1 &   1 & 0 & 0 & 1 & 1 & 1 \\
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      9 /41 & 0/1 & 0 & 1 & 0 & 0 & 1 &   0 & 0 & 1 & 0 & 0 & 0 &   1 & 0 & 1 & 0 & 0 & 0 \\
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      10/42 & 0/1 & 0 & 1 & 0 & 1 & 0 &   0 & 0 & 1 & 0 & 0 & 1 &   1 & 0 & 1 & 0 & 0 & 1 \\
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      11/43 & 0/1 & 0 & 1 & 0 & 1 & 1 &   0 & 0 & 1 & 0 & 1 & 0 &   1 & 0 & 1 & 0 & 1 & 0 \\ \hline
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      12/44 & 0/1 & 0 & 1 & 1 & 0 & 0 &   0 & 0 & 1 & 0 & 1 & 1 &   1 & 0 & 1 & 0 & 1 & 1 \\
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      13/45 & 0/1 & 0 & 1 & 1 & 0 & 1 &   0 & 0 & 1 & 1 & 0 & 0 &   1 & 0 & 1 & 1 & 0 & 0 \\
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      14/46 & 0/1 & 0 & 1 & 1 & 1 & 0 &   0 & 0 & 1 & 1 & 0 & 1 &   1 & 0 & 1 & 1 & 0 & 1 \\
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      15/47 & 0/1 & 0 & 1 & 1 & 1 & 1 &   0 & 0 & 1 & 1 & 1 & 0 &   1 & 0 & 1 & 1 & 1 & 0 \\ \hline
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      16/48 & 0/1 & 1 & 0 & 0 & 0 & 0 &   0 & 0 & 1 & 1 & 1 & 1 &   1 & 0 & 1 & 1 & 1 & 1 \\
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      17/49 & 0/1 & 1 & 0 & 0 & 0 & 1 &   0 & 1 & 0 & 0 & 0 & 0 &   1 & 1 & 0 & 0 & 0 & 0 \\
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      18/50 & 0/1 & 1 & 0 & 0 & 1 & 0 &   0 & 1 & 0 & 0 & 0 & 1 &   1 & 1 & 0 & 0 & 0 & 1 \\
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      19/51 & 0/1 & 1 & 0 & 0 & 1 & 1 &   0 & 1 & 0 & 0 & 1 & 0 &   1 & 1 & 0 & 0 & 1 & 0 \\ \hline
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      20/52 & 0/1 & 1 & 0 & 1 & 0 & 0 &   0 & 1 & 0 & 0 & 1 & 1 &   1 & 1 & 0 & 0 & 1 & 1 \\
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      21/53 & 0/1 & 1 & 0 & 1 & 0 & 1 &   0 & 1 & 0 & 1 & 0 & 0 &   1 & 1 & 0 & 1 & 0 & 0 \\
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      22/54 & 0/1 & 1 & 0 & 1 & 1 & 0 &   0 & 1 & 0 & 1 & 0 & 1 &   1 & 1 & 0 & 1 & 0 & 1 \\
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      23/55 & 0/1 & 1 & 0 & 1 & 1 & 1 &   0 & 1 & 0 & 1 & 1 & 0 &   1 & 1 & 0 & 1 & 1 & 0 \\ \hline
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      24/56 & 0/1 & 1 & 1 & 0 & 0 & 0 &   0 & 1 & 0 & 1 & 1 & 1 &   1 & 1 & 0 & 1 & 1 & 1 \\
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      25/57 & 0/1 & 1 & 1 & 0 & 0 & 1 &   0 & 1 & 1 & 0 & 0 & 0 &   1 & 1 & 1 & 0 & 0 & 0 \\
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      26/58 & 0/1 & 1 & 1 & 0 & 1 & 0 &   0 & 1 & 1 & 0 & 0 & 1 &   1 & 1 & 1 & 0 & 0 & 1 \\
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      27/59 & 0/1 & 1 & 1 & 0 & 1 & 1 &   0 & 1 & 1 & 0 & 1 & 0 &   1 & 1 & 1 & 0 & 1 & 0 \\ \hline
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      28/60 & 0/1 & 1 & 1 & 1 & 0 & 0 &   0 & 1 & 1 & 0 & 1 & 1 &   1 & 1 & 1 & 0 & 1 & 1 \\
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      29/61 & 0/1 & 1 & 1 & 1 & 0 & 1 &   0 & 1 & 1 & 1 & 0 & 0 &   1 & 1 & 1 & 1 & 0 & 0 \\
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      30/62 & 0/1 & 1 & 1 & 1 & 1 & 0 &   0 & 1 & 1 & 1 & 0 & 1 &   1 & 1 & 1 & 1 & 0 & 1 \\
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+      31/63 & 0/1 & 1 & 1 & 1 & 1 & 1 &   0 & 1 & 1 & 1 & 1 & 0 &   1 & 1 & 1 & 1 & 1 & 0 \\ \bottomrule
+      %       Q5    Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0    Q5  Q4  Q3  Q2  Q1  Q0
+    \end{tabular}
+  \end{adjustbox}
+  \caption{Tabla de verdad para el número anterior de 6bits. Se muestra del 0 al
+  31 en la columna \textbf{Número Previo} \small{$Q_5=0$}, del 32 al 63 en la
+  columna \textbf{Número Previo} \small{$Q_5=1$}}
+\end{table}

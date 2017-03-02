@@ -19,7 +19,7 @@
 
 \begin{figure}[H]
   \centering
-
+  \caption{Mapa de Karnaugh para $Q_2\prime$ del contador ascendente.}
   \begin{subfigure}{0.1\textwidth}
     \centering
     \begin{tikzpicture}[scale=0.8]
@@ -82,5 +82,11 @@
       \draw[very thick] (0,0.3) -- node [below]{$Q_4$} ++(4,0);
     \end{tikzpicture}
   \end{subfigure}
-  \caption{Mapa de Karnaugh para P del contador ascendente.}
+  \caption*{$
+    \color{blue} \overline{Q_2} Q_1 Q_0
+    \color{black} +
+    \color{red} Q_2 \overline{Q_1}
+    \color{black} +
+    \color{green} Q_2 \overline{Q_0}
+  $.}
 \end{figure}

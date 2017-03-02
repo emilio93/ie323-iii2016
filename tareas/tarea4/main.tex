@@ -34,13 +34,97 @@
 {B15680}
 {\today}
 
-Se tiene un conjunto de 6 flip flops unidos sincrónicamente a un reloj, todos
-sus
 
-\input{asc/q0}
-\input{asc/q1}
-\input{asc/q2}
+Se construye el siguiente circuito:
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{circuito/main.png}
+  \caption{Bloques del contador.}
+\end{figure}
+El bloque \textit{estado} es un banco de 6 flip flops, cada uno contiene el
+estado presente de uno de los bits en el contador. A este le entra una señal de
+reloj, una de set(pone todos los bits en 1), una de reset(pone todos los bits en
+0), una para indicar si se puede o no alterar el valor que almacena el flip
+flop, y la entrada de datos. El bloque \textit{6bit2bcd} convierte la señal de 6
+bits a 14 salidas para 2 pantallas de 7 segmentos que representan el número de
+la señal.
+
+Se identifican mediante 2 bombillos si el contador está en 0 o el número máximo.
+Se tienen dos bloques, \textit{-1} y \textit{+1} que suman o restan 1 al estado
+presente del contador. Estas cajas se obtienen a partir de mapas de Karnaugh.
+
+Mediante MUXES se selecciona la señal de 6 bits que indicará el próximo flanco
+de reloj. Esta puede ser una de 3, una señal MNOPQR que se activa con LOAD, el
+siguiente número, cuando MODE está activo y LOAD inactivo o bien el número
+previo cuando MODE y LOAD estén inactivos.
+
+
+
+\usection{Contador Ascendente}
+\input{asc/tablas}
+Se resuelven los mapas de Karnaugh para cada bit. $Q_5\prime$, $Q_4\prime$,
+$Q_3\prime$, $Q_2\prime$, $Q_1\prime$ y $Q_0\prime$.
+\input{asc/q5}
+\input{asc/q4}
 \input{asc/q3}
+\input{asc/q2}
+\input{asc/q1}
+\input{asc/q0}
 
+
+\usection{Contador Descendente}
+Se nota un patrón en las funciones obtenidas para el contador ascendente.
+\begin{equation*}
+\overline{Q_N} \cdot Q_{N-1} \cdot Q_{N-2} \cdot ... \cdot Q_1 \cdot Q_0 +
+Q_N \cdot \overline{Q_{N-1}} +
+Q_N \cdot \overline{Q_{N-2}} +
+... +
+Q_N \cdot \overline{Q_1} +
+Q_N \cdot \overline{Q_0}
+\end{equation*}
+Se asume que sucede lo mismo con
+el contador descendente y se resuelven la cantidad de mapas necesarios para
+obtener un patrón.
+
+\input{desc/tablas}
+\input{desc/q0}
+\input{desc/q1}
+\input{desc/q2}
+
+Se nota un patrón en las funciones obtenidas para el contador descendente hasta el momento.
+\begin{equation*}
+\overline{Q_N} \cdot \overline{Q_{N-1}} \cdot \overline{Q_{N-2}} \cdot ... \cdot \overline{Q_1} \cdot \overline{Q_0} +
+Q_N \cdot Q_{N-1} +
+Q_N \cdot Q_{N-2} +
+... +
+Q_N \cdot Q_1 +
+Q_N \cdot Q_0
+\end{equation*}
+
+De esto se obtiene para O:
+\begin{equation*}
+\overline{Q_3} \phantom{\cdot} \overline{Q_2} \phantom{\cdot} \overline{Q_1} \phantom{\cdot} \overline{Q_0} +
+Q_3 \phantom{\cdot} Q_2 +
+Q_3 \phantom{\cdot} Q_1 +
+Q_3 \phantom{\cdot} Q_0
+\end{equation*}
+
+Para N:
+\begin{equation*}
+\overline{Q_4} \phantom{\cdot} \overline{Q_3} \phantom{\cdot} \overline{Q_2} \phantom{\cdot} \overline{Q_1} \phantom{\cdot} \overline{Q_0} +
+Q_4 \phantom{\cdot} Q_3 +
+Q_4 \phantom{\cdot} Q_2 +
+Q_4 \phantom{\cdot} Q_1 +
+Q_4 \phantom{\cdot} Q_0
+\end{equation*}
+
+Para M:
+\begin{equation*}
+\overline{Q_5} \phantom{\cdot} \overline{Q_4} \phantom{\cdot} \overline{Q_3} \phantom{\cdot} \overline{Q_2} \phantom{\cdot} \overline{Q_1} \phantom{\cdot} \overline{Q_0} +
+Q_5 \phantom{\cdot} Q_4 +
+Q_5 \phantom{\cdot} Q_3 +
+Q_5 \phantom{\cdot} Q_2 +
+Q_5 \phantom{\cdot} Q_1 +
+Q_5 \phantom{\cdot} Q_0
+\end{equation*}
 
 \end{document}

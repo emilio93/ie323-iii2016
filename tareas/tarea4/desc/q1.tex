@@ -19,7 +19,7 @@
 
 \begin{figure}[H]
   \centering
-  \caption{Mapa de Karnaugh para $Q_3\prime$ del contador ascendente. }
+  \caption{Mapa de Karnaugh para $Q_1\prime$ del contador descendente.}
   \begin{subfigure}{0.1\textwidth}
     \centering
     \begin{tikzpicture}[scale=0.8]
@@ -29,21 +29,17 @@
   \begin{subfigure}{.4\textwidth}
     \centering
     \begin{Karnaugh}{$Q_3$}{$Q_2$}{$Q_1$}{$Q_0$}
-      \minterms{7, 8, 9, 10, 11, 12, 13, 14}
-      \implicantsol{7}{blue}
-      \implicant[5pt]{8}{10}{red}
-      \implicant{12}{9}{green}
-      \implicantcostats[2pt]{12}{10}{orange}
+      \minterms{0, 3, 4, 7, 8, 11, 12, 15}
+      \implicant{0}{8}{blue}
+      \implicant{3}{11}{red}
     \end{Karnaugh}
   \end{subfigure}
   \begin{subfigure}{.4\textwidth}
     \centering
     \begin{Karnaugh}{$Q_3$}{$Q_2$}{$Q_1$}{$Q_0$}
-      \minterms{7, 8, 9, 10, 11, 12, 13, 14}
-      \implicantsol{7}{blue}
-      \implicant[5pt]{8}{10}{red}
-      \implicant{12}{9}{green}
-      \implicantcostats[2pt]{12}{10}{orange}
+      \minterms{0, 3, 4, 7, 8, 11, 12, 15}
+      \implicant{0}{8}{blue}
+      \implicant{3}{11}{red}
     \end{Karnaugh}
   \end{subfigure}
 
@@ -56,21 +52,17 @@
   \begin{subfigure}{.4\textwidth}
     \centering
     \begin{Karnaugh}{$Q_3$}{$Q_2$}{$Q_1$}{$Q_0$}
-      \minterms{7, 8, 9, 10, 11, 12, 13, 14}
-      \implicantsol{7}{blue}
-      \implicant[5pt]{8}{10}{red}
-      \implicant{12}{9}{green}
-      \implicantcostats[2pt]{12}{10}{orange}
+      \minterms{0, 3, 4, 7, 8, 11, 12, 15}
+      \implicant{0}{8}{blue}
+      \implicant{3}{11}{red}
     \end{Karnaugh}
   \end{subfigure}
   \begin{subfigure}{.4\textwidth}
     \centering
     \begin{Karnaugh}{$Q_3$}{$Q_2$}{$Q_1$}{$Q_0$}
-      \minterms{7, 8, 9, 10, 11, 12, 13, 14}
-      \implicantsol{7}{blue}
-      \implicant[5pt]{8}{10}{red}
-      \implicant{12}{9}{green}
-      \implicantcostats[2pt]{12}{10}{orange}
+      \minterms{0, 3, 4, 7, 8, 11, 12, 15}
+      \implicant{0}{8}{blue}
+      \implicant{3}{11}{red}
     \end{Karnaugh}
   \end{subfigure}
 
@@ -87,12 +79,9 @@
     \end{tikzpicture}
   \end{subfigure}
   \caption*{$
-    \color{blue} \overline{Q_3} Q_2 Q_1 Q_0
+    \color{blue} \overline{Q_1} \phantom{\cdot} \overline{Q_0}
     \color{black} +
-    \color{red} Q_3 \overline{Q_2}
-    \color{black} +
-    \color{green} Q_3 \overline{Q_1}
-    \color{black} +
-    \color{orange} Q_3 \overline{Q_0}
-    $.}
+    \color{red} Q_1 \phantom{\cdot} Q_0
+    \color{black} \Rightarrow \overline{Q_1} \oplus Q_0
+  $.}
 \end{figure}

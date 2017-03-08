@@ -1,0 +1,72 @@
+
+
+Se tiene la siguiente tabla de verdad para las entradas $S_1$ y $S_0$:
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{c c c c c c c}
+    \toprule
+    $S_1$ & $S_0$ & LRV & LAV & LVV & LRP & LVP \\ \cmidrule(r){1-2} \cmidrule(l){3-7}
+    0     & 0     & 0   & 0   & 1   & 1   & 0  \\ \cmidrule(r){1-2} \cmidrule(l){3-7}
+    0     & 1     & 0   & 1   & 0   & 1   & 0  \\ \cmidrule(r){1-2} \cmidrule(l){3-7}
+    1     & 0     & 1   & 0   & 0   & 0   & 1  \\ \cmidrule(r){1-2} \cmidrule(l){3-7}
+    1     & 1     & 1   & 0   & 0   & 1   & 0  \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Se resuelven los mapas de Karnaugh para cada salida.
+
+\begin{figure}[H]
+  \begin{subfigure}{0.19\textwidth}
+    \centering
+    \begin{Karnaughquatre}{$S_1$}{$S_0$}
+      \minterms{2, 3}
+      \implicant{2}{3}{blue}
+    \end{Karnaughquatre}
+    \caption{LRV}
+  \end{subfigure}
+  \begin{subfigure}{0.19\textwidth}
+    \centering
+    \begin{Karnaughquatre}{$S_1$}{$S_0$}
+      \minterms{1}
+      \implicantsol{1}{blue}
+    \end{Karnaughquatre}
+    \caption{LAV}
+  \end{subfigure}
+  \begin{subfigure}{0.19\textwidth}
+    \centering
+    \begin{Karnaughquatre}{$S_1$}{$S_0$}
+      \minterms{0}
+      \implicantsol{0}{blue}
+    \end{Karnaughquatre}
+    \caption{LVV}
+  \end{subfigure}
+  \begin{subfigure}{0.19\textwidth}
+    \centering
+    \begin{Karnaughquatre}{$S_1$}{$S_0$}
+      \minterms{0, 1, 3}
+      \implicant{0}{1}{blue}
+      \implicant[3pt]{1}{3}{red}
+    \end{Karnaughquatre}
+    \caption{LRP}
+  \end{subfigure}
+  \begin{subfigure}{0.19\textwidth}
+    \centering
+    \begin{Karnaughquatre}{$S_1$}{$S_0$}
+      \minterms{2}
+      \implicantsol{2}{blue}
+    \end{Karnaughquatre}
+    \caption{LVP}
+  \end{subfigure}
+\end{figure}
+
+\begin{align*}
+  LRV &= S_1 &
+  LAV &= \overline{S_1} S_0 &
+  LVV &= \overline{S_1} \phantom{\cdot} \overline{S_0} &
+  LRP &= \overline{S_1} + S_0 &
+  LVP &= S_1 \overline{S_0}
+\end{align*}
+
+Se implementan estas funciones.

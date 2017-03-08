@@ -41,6 +41,16 @@
   \addcontentsline{toc}{subsubsection}{#1}
 }
 
+% Uncut table rules
+\makeatletter
+\newlength\mylena
+\newlength\mylenb
+\newcommand\mystrut[1][2]{%
+    \setlength\mylena{#1\ht\@arstrutbox}%
+    \setlength\mylenb{#1\dp\@arstrutbox}%
+    \rule[\mylenb]{0pt}{\mylena}}
+\makeatother
+
 % Circuitikz equal
 \newcommand*{\equal}{=}
 
@@ -63,7 +73,7 @@
       \textsc{\Large Escuela de Ingeniería Eléctrica}\\
       [0.55in]
 
-      \textsc{\Large Circuitos Digitales 1 - IE0323}\\
+      \textsc{\Large Circuitos Digitales I - IE0323}\\
       [0.25in]
 
       \textsc{\huge \bfseries {#1}}\\

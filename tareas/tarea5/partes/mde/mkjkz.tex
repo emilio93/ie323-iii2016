@@ -18,8 +18,8 @@
   \begin{subfigure}{.4\textwidth}
     \centering
     \begin{Karnaugh}{Y}{Z}{ZERO}{SP'}
-      \minterms{6, 7, 8, 9, 10, 11}
-      \indeterminats{0, 1, 2, 3, 4, 5, 12, 13, 14, 15}
+      \minterms{0, 1, 2, 3, 8, 9, 10, 11}
+      \indeterminats{4, 5, 6, 7, 12, 13, 14, 15}
       \implicant{0}{10}{blue}
     \end{Karnaugh}
   \end{subfigure}
@@ -51,19 +51,22 @@
   \begin{subfigure}{.4\textwidth}
     \centering
     \begin{Karnaugh}{Y}{Z}{ZERO}{SP'}
-      \minterms{0, 1, 2, 3, 8, 9, 10, 11}
-      \indeterminats{4, 5, 6, 7, 12, 13, 14, 15}
+      \minterms{7, 14, 15}
+      \indeterminats{0, 1, 2, 3, 8, 9, 10, 11}
       \implicantdaltbaix{0}{10}{blue}
-      \implicant[3pt]{3}{10}{red}
+      \implicant[3pt]{3}{11}{red}
+      \implicant[6pt]{15}{10}{green}
     \end{Karnaugh}
   \end{subfigure}
   \begin{subfigure}{.4\textwidth}
     \centering
     \begin{Karnaugh}{Y}{Z}{ZERO}{SP'}
-      \minterms{0, 1, 2, 3, 14, 15}
-      \indeterminats{6, 7, 8, 9, 10, 11}
+      \minterms{6, 7, 14, 15}
+      \indeterminats{0, 1, 2, 3, 8, 9, 10, 11}
       \implicantdaltbaix{0}{10}{blue}
-      \implicant[3pt]{3}{10}{red}
+      \implicant[3pt]{3}{11}{red}
+      \implicant[6pt]{15}{10}{green}
+      \implicant[-2pt]{3}{10}{orange}
     \end{Karnaugh}
   \end{subfigure}
 
@@ -80,5 +83,5 @@
     \end{tikzpicture}
   \end{subfigure}
 
-  \caption*{$K_Z = \color{blue} \overline{\text{Z}} \color{black} + \color{red} \text{ZERO}$.}
+  \caption*{$K_Z = \color{blue} \overline{\text{Z}} \color{black} + \color{red} \text{ZERO} \cdot \text{SP'} \color{black} + \color{green} \text{Y} \cdot \text{ZERO} \color{black} + \color{orange} \text{X} \cdot \text{ZERO}$.}
 \end{figure}

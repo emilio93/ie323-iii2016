@@ -17,30 +17,33 @@
 % IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 % CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-\documentclass{article}
-
-\input{../../shared/packages.tex}
-\input{../../shared/karnaugh.tex}
-\input{../../shared/config.tex}
-\input{../../shared/commands.tex}
-
-\begin{document}
-
-\pagenumbering{gobble}
-
-\portada
-{Tarea \#5 {\large y} \#6\\{\Large Solución}}
-{Emilio Javier Rojas Álvarez}
-{B15680}
-{\today}
-
-\usection{Decodificador de Salidas}
-\input{partes/decodificador-de-salidas}
-
-\usection{Máquina de Estados}
-\input{partes/mde-estados}
-\input{partes/mde-tabla-de-estados}
-\input{partes/mde-entradas}
-\input{partes/mde-salidas}
-
-\end{document}
+\usubsection{Salidas}
+  Se sabe que $S_1 = X$, $S_0 = Y$ y $LOAD = \overline{Z}$. Se nota que SE solo se activa en el estado \textbf{f}, por lo que su función
+  es $X \overline{Y} Z$. Para TS tenemos la siguiente tabla de verdad y mapa de Karnaugh, de donde
+  TS es $\text{Y}$
+  \begin{figure}[H]
+    \begin{subfigure}{0.49\textwidth}
+      \centering
+      \begin{tabular}{c c c c}
+        \toprule
+        $X$ & $Y$ & $Z$ & TS \\ \midrule
+        0     & 0     & 0   & 0 \\
+        0     & 0     & 1   & x \\
+        0     & 1     & 0   & 1 \\
+        0     & 1     & 1   & x \\
+        1     & 0     & 0   & 0 \\
+        1     & 0     & 1   & x \\
+        1     & 1     & 0   & 1 \\
+        1     & 1     & 1   & x \\
+        \bottomrule
+      \end{tabular}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+      \centering
+      \begin{Karnaughvuit}{X}{Y}{Z}
+        \minterms{2, 6}
+        \indeterminats{1, 3, 5, 7}
+        \implicant{3}{6}{blue}
+      \end{Karnaughvuit}
+    \end{subfigure}
+  \end{figure}

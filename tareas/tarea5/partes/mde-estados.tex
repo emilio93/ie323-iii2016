@@ -17,30 +17,15 @@
 % IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 % CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-\documentclass{article}
-
-\input{../../shared/packages.tex}
-\input{../../shared/karnaugh.tex}
-\input{../../shared/config.tex}
-\input{../../shared/commands.tex}
-
-\begin{document}
-
-\pagenumbering{gobble}
-
-\portada
-{Tarea \#5 {\large y} \#6\\{\Large Solución}}
-{Emilio Javier Rojas Álvarez}
-{B15680}
-{\today}
-
-\usection{Decodificador de Salidas}
-\input{partes/decodificador-de-salidas}
-
-\usection{Máquina de Estados}
-\input{partes/mde-estados}
-\input{partes/mde-tabla-de-estados}
-\input{partes/mde-entradas}
-\input{partes/mde-salidas}
-
-\end{document}
+\usubsection{Estados}
+Se definen 8 estados con los bits $X$, $Y$ y $Z$. $X$ representa a $S_1$ y $Y$ a $S_0$.
+\begin{enumerate}[label*=\textbf{\alph*)}]
+  \item $X=0$, $Y=0$, $Z=0$: Carga tiempo mínimo de paso vehicular.
+  \item $X=0$, $Y=0$, $Z=1$: Espera tiempo mínimo de paso vehicular y solicitud de paso.
+  \item $X=0$, $Y=1$, $Z=0$: Carga de tiempo de paso restringido(luz amarilla vehicular).
+  \item $X=0$, $Y=1$, $Z=1$: Espera tiempo de paso restringido.
+  \item $X=1$, $Y=0$, $Z=0$: Carga de tiempo de paso peatonal.
+  \item $X=1$, $Y=0$, $Z=1$: Espera tiempo de paso peatonal.
+  \item $X=1$, $Y=1$, $Z=0$: Carga de tiempo de banda de seguridad(luz roja vehicular y luz roja peatonal).
+  \item $X=1$, $Y=1$, $Z=1$: Espera tiempo de banda de seguridad.
+\end{enumerate}

@@ -1,0 +1,171 @@
+% Copyright 2017 Emilio Rojas
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy of
+% this software and associated documentation files (the "Software"), to deal in
+% the Software without restriction, including without limitation the rights to
+% use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+% the Software, and to permit persons to whom the Software is furnished to do so,
+% subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+% FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+% COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+% IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+% CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+\documentclass{article}
+
+\input{../../shared/packages.tex}
+\input{../../shared/karnaugh.tex}
+\input{../../shared/config.tex}
+\input{../../shared/commands.tex}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+\portada
+{Tarea \#5 {\large y} \#6}
+{Emilio Javier Rojas Álvarez}
+{B15680}
+{\today}
+
+\usection{Introducción}
+Se construye un circuito que maneja un sistema semáforo de paso peatonal y el
+respectivo vehicular. Para esto se utiliza una máquina de estados con 8 estados,
+4 de los cuales son para cargar un tiempo en un contador, y los otros 4 son para
+esperar que ese tiempo transcurra. Adicionalmente se pudo haber tomado en cuenta
+una serie de estados que tomara en cuenta si el tiempo habia transcurrido, sin
+embargo se decidió utilizar una memoria externa para saber si el tiempo habia
+transcurrido, similar a la memoria de la solicitud de paso, esta solución tiene
+la desventaja de que, sin lógica adicional, no permite deshabilitar el contador
+cuando no se necesite, por lo que este está contando en todo momento.
+
+El circuito creado se muestra en la figura 1, y cuenta con 5 bloques. 2 memorias
+de estados para SP(solicitud de paso), y ZERO(indica si el contador ha marcado 0),
+la máquina de estados, compuesta por 3 flip flops JK, lógica de entrada y lógica
+de salida, un decodificador de salidas para indicar cuales luces de los semáforos
+deben encenderse, y por último un módulo de tiempos que es el encargado de
+contar y enviar las señales a las pantallas de 7 segmentos.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{circuito/main.png}
+  \caption{Circuito para el sistema solicitado.}
+\end{figure}
+
+\usection{Descripción del Algoritmo utilizado}
+
+\input{partes/mde-estados}
+
+El algoritmo utilizado es bastante sencillo, principalmente porque el usuario(el peatón)
+solo tiene una manera de interactuar con el sistema, solicitando el paso, esto
+corresponde al estado \textbf{b}. El sistma comienza en el estado \textbf{a}, donde
+carga 40 segundos(mínimo) para el paso vehicular, y pasa al estado \textbf{b} que
+espera la señal de ZERO(han transcurrido los 40 segundos) y la solicitud de paso,
+una vez cumplidas estas condiciones se pasa al estado \textbf{c}, que carga 10
+segundos para el paso restringido(esto es cuando la luz amarilla vehicular está
+encendida y la luz peatonal se mantien en rojo), y se procede a esperar esos 10
+segundos en el estado \textbf{d}, y se sigue inmediatamente en el estado \textbf{e},
+se carga 40 segundos para el paso peatonal, y se espera estos 40 segundos en el
+estado \textbf{f}, donde también se encienden las pantallas de 7 segmentos.
+Por último, se tienen los estados \textbf{g} y \textbf{h}, el primero carga 10
+segundos en los cuales los 2 semáforos están en rojo, y el segundo se encarga de
+esperar que trancurra dicho tiempo. Una vez cumplido el tiempo se regresa al estado
+\textbf{a}.
+
+\usection{Diagrama ASM}
+Se muestra el diagrama ASM, se omiten las salidas $S_1$, $S_0$ puesto que están
+dadas por el código del estado.
+\usetikzlibrary{arrows, arrows.meta, shapes}
+\begin{figure}[H]
+  \centering
+  \tikz[scale=0.9]{
+    \draw
+    (0, 0) node {a} circle (.5)
+    ++(-1.5, -.5) rectangle ++(3, -1) ++(-1.5, .5) node (ae1) {LOAD}
+    ;
+    \draw[->]
+    (ae1) ++(0, -.5) -- ++(0, -.5) node (a1) {}
+    ;
+    \draw
+    (a1) ++(0, -.5) node {b} circle (.5)
+    ++(0, -.5) -- ++(2, -.5) -- ++(-2, -.5) node (q11) {} -- ++(-2, .5) node (q10) {} -- ++(2, .5)
+    ++(0, -.5) node {ZERO$\cdot$SP'}
+    ++(-2, .5) node (ae2) {}
+    ;
+    \draw[->]
+    (q10) node [above left] {0} -- ++(0, 1) -- ++(1.5, 0)
+    ;
+    \draw[->]
+    (q11) node [below left] {1} -- ++(0, -.5) node (a2) {}
+    ;
+
+
+    \draw
+    (a2) ++(0, -.5) node {c} circle (.5)
+    ++(-1.5, -.5) rectangle ++(3, -1) ++(-1.5, .5) node (ae3) {LOAD, TS}
+    ;
+    \draw[->]
+    (ae3) ++(0, -.5) -- ++(0, -.5) node (a3) {};
+    \draw
+    (a3) ++(0, -.5) node {d} circle (.5)
+    ++(0, -.5) -- ++(2, -.5) -- ++(-2, -.5) node (q21) {} -- ++(-2, .5) node (q20) {} -- ++(2, .5)
+    ++(0, -.5) node {ZERO}
+    ++(-2, .5) node (ae4) {}
+    ;
+    \draw[->]
+    (q20) node [above left] {0} -- ++(0, 1) -- ++(1.5, 0)
+    ;
+    \draw[->]
+    (q21) node [below left] {1} -- ++(0, -.5) node (a4) {}
+    ;
+
+    \draw
+    (a4) ++(0, -.5) node {e} circle (.5)
+    ++(-1.5, -.5) rectangle ++(3, -1) ++(-1.5, .5) node (ae5) {LOAD}
+    ;
+    \draw[->]
+    (ae5) ++(0, -.5) -- ++(0, -.5) node (a5) {};
+
+    \draw
+    (a5) ++(0, -.5) node {f} circle (.5)
+    ++(-1.5, -.5) rectangle ++(3, -1) ++(-1.5, .5) node {SE}
+    ++(0, -.5) -- ++(2, -.5) -- ++(-2, -.5) node (q31) {} -- ++(-2, .5) node (q30) {} -- ++(2, .5)
+    ++(0, -.5) node {ZERO}
+    ++(-2, .5) node (ae6) {}
+    ;
+    \draw[->]
+    (q30) node [above left] {0} -- ++(0, 2) -- ++(1.5, 0)
+    ;
+    \draw[->]
+    (q31) node [below left] {1} -- ++(0, -.5) node (a6) {}
+    ;
+
+    \draw
+    (a6) ++(0, -.5) node {g} circle (.5)
+    ++(-1.5, -.5) rectangle ++(3, -1) ++(-1.5, .5) node (ae7) {LOAD, TS}
+    ;
+    \draw[->]
+    (ae7) ++(0, -.5) -- ++(0, -.5) node (a7) {};
+    \draw
+    (a7) ++(0, -.5) node {h} circle (.5)
+    ++(0, -.5) -- ++(2, -.5) -- ++(-2, -.5) node (q41) {} -- ++(-2, .5) node (q40) {} -- ++(2, .5)
+    ++(0, -.5) node {ZERO}
+    ++(-2, .5) node (ae8) {}
+    ;
+    \draw[->]
+    (q40) node [above left] {0} -- ++(0, 1) -- ++(1.5, 0)
+    ;
+    \draw[->]
+    (q41) node [below left] {1} -- ++(0, -.5) -- ++(2.5, 0) -- ++(0, 20.5) -- ++(-2, 0)
+    ;
+  }
+\end{figure}
+
+
+\end{document}

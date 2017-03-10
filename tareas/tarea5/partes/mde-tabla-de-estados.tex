@@ -17,30 +17,21 @@
 % IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 % CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-\documentclass{article}
-
-\input{../../shared/packages.tex}
-\input{../../shared/karnaugh.tex}
-\input{../../shared/config.tex}
-\input{../../shared/commands.tex}
-
-\begin{document}
-
-\pagenumbering{gobble}
-
-\portada
-{Tarea \#5 {\large y} \#6\\{\Large Solución}}
-{Emilio Javier Rojas Álvarez}
-{B15680}
-{\today}
-
-\usection{Decodificador de Salidas}
-\input{partes/decodificador-de-salidas}
-
-\usection{Máquina de Estados}
-\input{partes/mde-estados}
-\input{partes/mde-tabla-de-estados}
-\input{partes/mde-entradas}
-\input{partes/mde-salidas}
-
-\end{document}
+\usubsection{Tabla de Estados}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{c c c c c}
+    \toprule
+    \multirow{2}{*}{EP}  & \multicolumn{4}{c}{Próximo Estado} \\
+    & \multicolumn{4}{c}{Entradas: ZERO, SP'} \\  \cmidrule{2-5}
+    XYZ     & 00  & 01  & 10  & 11  \\ \toprule
+    a = 000 & 001 & 001 & 001 & 001 \\ \midrule
+    b = 001 & 001 & 001 & 001 & 010 \\ \midrule
+    c = 010 & 011 & 011 & 011 & 011 \\ \midrule
+    d = 011 & 011 & 011 & 100 & 100 \\ \midrule
+    e = 100 & 101 & 101 & 101 & 101 \\ \midrule
+    f = 101 & 101 & 101 & 111 & 110 \\ \midrule
+    g = 110 & 111 & 111 & 111 & 111 \\ \midrule
+    h = 111 & 111 & 111 & 000 & 000 \\ \bottomrule
+  \end{tabular}
+\end{table}
